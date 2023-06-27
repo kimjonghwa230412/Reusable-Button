@@ -10,7 +10,7 @@ const StBox = styled.div`
   height: 100px;
   border: 1px solid ${(props) => props.borderColor};
   margin: 20px;
-  background-color: ${(props) => props.backgroundColor};`
+`
 
   // 박스의 색
   const boxList = ['red', 'blue', 'green', 'black']
