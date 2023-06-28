@@ -1,43 +1,18 @@
-import React, { useState } from 'react'
-import Box1 from './components/Box1'
-import Box2 from './components/Box2'
-import Box3 from './components/Box3'
+import React from 'react'
+import {useSelector} from 'react-redux'
 
 function App() {
-  console.log('App 컴포넌트가 렌더링 되었습니다')
-  const [count, setCount] = useState(0)
 
-  const onPlusButtonClickHandler = () => {
-    setCount(count + 1)
-  }
-
-  const onMinusButtonClickHandler = () => {
-    setCount(count - 1)
-  }
-
-  const initCount = () => {
-    setCount(0)
-  }
-
+  // 여기에서 store에 접근하여, counter의 값을 읽어오고 싶다!
+  // useSelector(redux hook)
+  const data = useSelector((state)=>{
+    return state
+  })
+  console.log(data)
   return (
-    <div>
-      <div>
-        <h3>카운트 예제입니다!</h3>
-        <p>현재 카운트 : {count} </p>
-        <button onClick={onPlusButtonClickHandler}>+</button>
-        <button onClick={onMinusButtonClickHandler}>-</button>
-      </div>
-      <div
-        style={{
-          display: 'flex',
-          marginTop: '10px'
-        }}>
-        <Box1 initCount={initCount} />
-        <Box2 />
-        <Box3 />
-      </div>
-    </div>
+    <div>Redux!</div>
   )
+  
 }
 
 export default App
