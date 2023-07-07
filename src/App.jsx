@@ -1,9 +1,17 @@
 import React from 'react'
-import Router from './shared/Router'
+import Button from './components/Button'
+import Input from './components/Input'
+import Modal from './components/Modal/Modal'
+import Select from './components/select/select'
 
-function App() {
+const App = () => {
   return (
-    <div><Router/></div>
+    <div>
+        <Button />
+        <Input />
+        <Modal />
+        <Select />
+    </div>
   )
 }
 
