@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Modal from './Components/Modal'
+import ModalButton from './Components/Button'
 
 const BUTTON_WRAPPER_STYLES = {
   position: 'relative',
