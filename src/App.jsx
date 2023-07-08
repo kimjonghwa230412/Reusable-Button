@@ -1,18 +1,31 @@
-import React from 'react'
-import Button from './components/Button'
-import Input from './components/Input'
-import Modal from './components/Modal/Modal'
-import Select from './components/select/select'
+import React, { useState } from 'react'
+import Modal from './Components/Modal'
 
-const App = () => {
+const BUTTON_WRAPPER_STYLES = {
+  position: 'relative',
+  zIndex: 1
+}
+
+const OTHER_CONTENT_STYLES = {
+  position: 'relative',
+  zIndex: 2,
+  backgroundColor: 'red',
+  padding: '10px'
+}
+
+export default function App() {
+  const [isOpen, setIsOpen] = useState(false)
   return (
     <div>
-        <Button />
-        <Input />
-        <Modal />
-        <Select />
+      <div style={BUTTON_WRAPPER_STYLES} onClick={() => console.log('clicked')}>
+        <Button size="lg" color="light" variant="primary" onClick={() => setIsOpen(true)}>Open Modal</Button>
+
+        <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+          Fancy Modal
+        </Modal>
+      </div>
+
+      <div style={OTHER_CONTENT_STYLES}>Other Content</div>
     </div>
   )
 }
-
-export default App
